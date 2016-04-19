@@ -1,12 +1,11 @@
-mailers = Dir[Rails.root + 'app/mailers/**/*.rb'].map { |p| File.basename(p, '.rb') }
+require 'browse_mail/crypto'
+
+mailers = BrowseMail.preview_classes
 
 BrowseMail::Engine.routes.draw do
   mailers.each do |mailer|
-    scope "/#{mailer}" do
-      Object.const_get(mailer.camelcase).instance_methods(false).each do |method|
-        puts "route #{mailer}\##{method}"
-        get method.to_s => 'application#index'
-      end
+    Object.const_get(mailer.camelcase).instance_methods(false).each do |method|
+      get "#{mailer.underscore}.#{method}" => 'application#index'
     end
   end
 end

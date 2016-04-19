@@ -5,6 +5,7 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'rspec-rails', '~> 3.4.0'
 end
 
 gemspec

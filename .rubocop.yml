@@ -1,0 +1,23 @@
+---
+inherit_from:
+  - .rubocop-common.yml
+
+AllCops:
+  Exclude:
+  - '**/*/schema.rb'
+  - 'db/migrate/*.rb'
+  - 'bin/*'
+  - '**/legacy/*.rb'
+
+Style/ClassVars:
+  Exclude:
+  - lib/routing_filter.rb
+
+Style/AccessorMethodName:
+  Severity: refactor
+
+Style/ClassVars:
+  Severity: refactor
+
+Lint/Void:
+  Exclude: ['**/*_spec.rb']
