@@ -3,12 +3,12 @@ module BrowseMail
     before_filter :decrypt_url_params
 
     def index
-      render text: retrive_mail.body
+      render text: retrieve_mail.body
     end
 
     private
 
-    def retrive_mail
+    def retrieve_mail
       class_name, method_name = request.path_info.split('/')[1].split('.')
       class_object = Object.const_get(class_name.camelcase)
       initialize_class(class_object).send(method_name.to_sym)
