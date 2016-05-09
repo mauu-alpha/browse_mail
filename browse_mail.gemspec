@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Mauro Campillo"]
   spec.email         = ["mauro@restorando.com"]
 
-  spec.summary       = %q{: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{: Write a longer description or delete this line.}
-  spec.homepage      = "https://www.restorando.com"
+  spec.summary       = "View your emails in the brwoser"
+  spec.description   = "Provides a link to open your sent mails in the browser and to be shown correctly"
+  spec.homepage      = "https://github.com/mauu-alpha/browse_mail"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.

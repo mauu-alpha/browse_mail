@@ -1,6 +1,6 @@
 ---
 AllCops:
-  TargetRubyVersion: 2.2
+  TargetRubyVersion: 2.1
 
 Metrics/CyclomaticComplexity:
   Severity: refactor
@@ -51,9 +51,6 @@ Style/GuardClause:
 Style/Lambda:
   Enabled: false
 
-Style/EmptyLinesAroundBody:
-  Enabled: false
-
 Style/EmptyLineBetweenDefs:
   AllowAdjacentOneLineDefs: true
 
@@ -76,11 +73,6 @@ Style/AlignHash:
 
 Style/ModuleFunction:
   Enabled: false
-
-Style/RegexpLiteral:
-  # The maximum number of (escaped) slashes that a slash-delimited regexp is
-  # allowed to have. If there are more slashes, a %r regexp shall be used.
-  MaxSlashes: 0
 
 Style/FormatString:
   Enabled: false
@@ -141,10 +133,6 @@ Style/DotPosition:
 Style/SingleLineMethods:
   AllowIfMethodIsEmpty: true
 
-# It doesnt handle cases when we want to align multiple methods call into a table like
-Style/SingleSpaceBeforeFirstArg:
-  Enabled: false
-
 # replaces $1 x Regexp.last_match[1]
 Style/PerlBackrefs:
   Enabled: false
@@ -152,8 +140,3 @@ Style/PerlBackrefs:
 # There are valid cases (eg. Date.parse(date) rescue nil)
 Style/RescueModifier:
   Enabled: false
-
-Style/Blocks:
-  Severity: refactor
-  Exclude:
-  - '**/spec/**/*_spec.rb'

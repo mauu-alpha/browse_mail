@@ -5,7 +5,10 @@ rescue LoadError
 end
 
 require 'rdoc/task'
+require 'rubocop/rake_task'
+require 'rspec/core/rake_task'
 
+RuboCop::RakeTask.new
 RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title    = 'BrowseMail'
@@ -18,8 +21,6 @@ APP_RAKEFILE = File.expand_path("../spec/dummy/Rakefile", __FILE__)
 load 'rails/tasks/engine.rake'
 
 load 'rails/tasks/statistics.rake'
-
-require 'rspec/core/rake_task'
 
 RSpec::Core::RakeTask.new(:spec) do |t|
   t.pattern = (Pathname(__FILE__).dirname + "spec/**/*_spec.rb").to_s
