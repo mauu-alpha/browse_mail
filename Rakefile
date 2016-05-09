@@ -19,4 +19,12 @@ load 'rails/tasks/engine.rake'
 
 load 'rails/tasks/statistics.rake'
 
+require 'rspec/core/rake_task'
+
+RSpec::Core::RakeTask.new(:spec) do |t|
+  t.pattern = (Pathname(__FILE__).dirname + "spec/**/*_spec.rb").to_s
+end
+
+task default: [:spec]
+
 Bundler::GemHelper.install_tasks
