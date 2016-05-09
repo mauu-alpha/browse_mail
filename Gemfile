@@ -7,6 +7,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails', '~> 3.4.0'
   gem 'actionmailer'
+  gem 'coveralls', require: false
 end
 
 gemspec
