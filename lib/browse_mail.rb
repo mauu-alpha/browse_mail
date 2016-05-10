@@ -1,7 +1,7 @@
 require 'browse_mail/engine'
 
 module BrowseMail
-  mattr_accessor :preview_classes, :encrypt_url_params
+  mattr_accessor :preview_classes_path, :encrypt_url_params
 
   def find_preview_classes(dir)
     return [] unless File.directory?(dir)

@@ -1,6 +1,6 @@
 require 'browse_mail/crypto'
 
-mailers = BrowseMail.preview_classes
+mailers = BrowseMail.find_preview_classes(BrowseMail.preview_classes_path)
 
 BrowseMail::Engine.routes.draw do
   mailers.each do |mailer|
